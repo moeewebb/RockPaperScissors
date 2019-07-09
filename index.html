@@ -1,0 +1,73 @@
+<!DocTYPE html>
+    <html>
+        <head>
+            <title>Rock, Paper, Sissiors</title>
+        </head>
+    <body>
+
+    <div id="game">
+        <p>Press r, p, or s to start playing</p>
+
+    </div>
+
+        
+
+        <!-- // I need the user to make a choice computer to make a choice
+        Capture those choices 
+        Compare this choices, and determine a win, loss or tie
+        Display the results to the user-->
+
+        <script type="text/javascript">
+
+            var options = ["r", "p", "s"];
+            var wins = 0;
+            var losses = 0;
+            var ties = 0; 
+
+        var options = ["r", "p", "s"];
+        
+            document.onkeyup = function() {
+                var userguess = String.fromCharCode (event.keyCode).
+                    toLowerCase();
+                
+                console.log(userguess);
+
+                var computerGuess = options[Math.floor(Math.random()*options.length)];
+
+                if (userguess=='r' || userguess=='p' || userguess=='s') {
+                    if ((userguess=='r') && (computerGuess=='s')) {
+                        wins++;
+                        
+                    }
+                    if ((userguess=='r') && (computerGuess=='p')) {
+                        wins++;
+                        
+                    }
+                    if ((userguess=='s') && (computerGuess=='r')) {
+                        
+                    }
+                    if ((userguess=='p') && (computerGuess=='s')) {
+                        
+                    }
+                    if ((userguess=='p') && (computerGuess=='r')) {
+                        
+                    }
+                    if ((userguess==computerGuess)) {
+                        
+                    }
+                } else {
+                    alert("Please choose r, p, or s");
+                }
+                
+                var html = "<p>Press r, p, or s to start playing</P>" + 
+                "<p>wins: " + wins + "</p>" + 
+                "<p>losses: " + losses + "</p>" + 
+                "<p>ties: " + ties + "</p>";
+
+                document.querySelector('#game').innerHTML = html;
+            }
+        </script>
+
+
+    </body>         
+    </html>
